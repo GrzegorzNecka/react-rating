@@ -1,0 +1,13 @@
+h1,
+p {
+  font-family: Lato;
+}
+
+.rating {
+  background: red;
+  padding: 20px;
+}
+
+.fa-star-active:before {
+  color: gold;
+}
