@@ -13,21 +13,23 @@ const UglyNumber = () => {
   return <p>Ugly Number: {state}</p>;
 };
 
+const PrettyNumber = () => {
+  const [state, setState] = useState(0);
+
+  useEffect(() => {
+    setState((prevState) => prevState + 1);
+    setState((prevState) => prevState + 1);
+    setState((prevState) => prevState + 1);
+  }, []);
+
+  return <p>Pretty Number: {state}</p>;
+};
+
 export default function App() {
   return (
-    <div onClick={handleReset} className="rating">
-      {stars.map((star) => {
-        return (
-          <i
-            key={star}
-            onClick={() => setRating(star)}
-            className={
-              rating >= star ? `fa fa-star fa-star-active` : `fa fa-star`
-            }
-            aria-hidden="true"
-          ></i>
-        );
-      })}
-    </div>
+    <>
+      <UglyNumber />
+      <PrettyNumber />
+    </>
   );
 }
